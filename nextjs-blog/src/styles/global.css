@@ -5,8 +5,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(226, 226, 226);
-  padding: 10px;
-  text-align: center;
+  padding: 5%;
 }
 
 @layer utilities {
@@ -59,18 +58,23 @@ body {
 
 .post-container {
   margin-top: 20px;
-  padding: 10px;
+  padding: 0 25%;
   border-top: 1px solid gray;
 }
 .post-title {
   font-weight: bold;
   margin-top: 10px;
+  padding: 10px;
 }
 
 .post-contents {
   padding: 10px;
 }
 
-.post-contents li {
-  margin: 10px;
+.article-content {
+  padding: 0% 25%;
+}
+
+time {
+  color: rgb(115, 111, 111);
 }
