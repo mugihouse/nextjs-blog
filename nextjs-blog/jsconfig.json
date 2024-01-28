@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
+    "baseUrl": "src"
+  },
+  "include": ["next-env.d.js", "src/**/*.js", "src/**/*.jsx"]
 }
