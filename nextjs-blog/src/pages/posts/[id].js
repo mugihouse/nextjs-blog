@@ -2,6 +2,8 @@ import { getAllPostIds, getPostData } from "../../../lib/posts";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import Date from "../../../components/date";
+
 export default function Post({ postData }) {
   return (
     <>
@@ -24,7 +26,7 @@ export default function Post({ postData }) {
         <br />
         {postData.id}
         <br />
-        {postData.date}
+        <Date dateString={postData.date} />
         <br />
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         <br />
