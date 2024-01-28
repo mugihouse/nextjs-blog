@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(226, 226, 226);
+  padding: 10px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.img-wrap {
+  position: relative;
+  height: 300px;
+  width: 350px;
+}
+
+.profile-img {
+  border-radius: 9999px;
+
+  margin: auto;
+}
+
+.profile {
+  margin-top: 5%;
+  text-align: center;
+}
