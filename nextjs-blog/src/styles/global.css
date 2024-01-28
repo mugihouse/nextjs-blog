@@ -56,3 +56,21 @@ body {
 .link-title:hover::after {
   width: 100%;
 }
+
+.post-container {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid gray;
+}
+.post-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.post-contents {
+  padding: 10px;
+}
+
+.post-contents li {
+  margin: 10px;
+}
