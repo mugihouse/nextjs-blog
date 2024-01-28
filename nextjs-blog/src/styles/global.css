@@ -6,6 +6,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(226, 226, 226);
   padding: 10px;
+  text-align: center;
 }
 
 @layer utilities {
@@ -29,4 +30,47 @@ body {
 .profile {
   margin-top: 5%;
   text-align: center;
+}
+
+.profile-description {
+  margin-bottom: 10px;
+}
+
+.link-title {
+  position: relative;
+  display: inline-block;
+  transition: 0.3s;
+}
+.link-title:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #31aae2;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+
+.link-title:hover::after {
+  width: 100%;
+}
+
+.post-container {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid gray;
+}
+.post-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.post-contents {
+  padding: 10px;
+}
+
+.post-contents li {
+  margin: 10px;
 }

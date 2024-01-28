@@ -8,7 +8,9 @@ export default function Home() {
         <title>Create Post</title>
       </Head>
       <h1>First Post</h1>
-      <Link href="/">Back to home</Link>
+      <Link href="/" className="link-title">
+        Back to home
+      </Link>
     </>
   );
 }
