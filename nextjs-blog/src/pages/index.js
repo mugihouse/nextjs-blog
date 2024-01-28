@@ -19,10 +19,13 @@ export default function Home() {
       <section className="profile">
         <h1 className="profile-name"></h1>
         <p>I'm sable</p>
-        <p>
+        <p className="profile-description">
           This is a sample website - you’ll be building a site like this on{" "}
           <a href="/images/profile.jpg">our Next.js tutorial </a>.
         </p>
+        <Link href="/posts/first-post" className="link-title">
+          First Post
+        </Link>
       </section>
     </>
   );
