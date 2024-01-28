@@ -1,10 +1,13 @@
 import { getAllPostIds, getPostData } from "../../../lib/posts";
 import Link from "next/link";
 import Image from "next/image";
-
+import Head from "next/head";
 export default function Post({ postData }) {
   return (
     <>
+      <Head>
+        <title>{postData.title}</title>
+      </Head>
       <Image
         priority
         src="/images/profile.jpg"
@@ -13,16 +16,20 @@ export default function Post({ postData }) {
         width={144}
         alt=""
       />
-      <section className="profile">
+      <section className="profile mt-8">
         <h1 className="profile-name"></h1>
       </section>
-      {postData.title}
-      <br />
-      {postData.id}
-      <br />
-      {postData.date}
-      <br />
-      <Link href="/">Back To Home</Link>
+      <div className="article-content">
+        {postData.title}
+        <br />
+        {postData.id}
+        <br />
+        {postData.date}
+        <br />
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <br />
+        <Link href="/">Back To Home</Link>
+      </div>
     </>
   );
 }
@@ -36,7 +43,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = getPostData(params.id);
+  const postData = await getPostData(params.id);
   return {
     props: {
       postData,
