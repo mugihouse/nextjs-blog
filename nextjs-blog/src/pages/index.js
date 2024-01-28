@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import { getSortedPostsData } from "../../lib/posts";
 
-export default function Home() {
+export default function Home({ allPostsData }) {
   return (
     <>
       <Head>
@@ -27,6 +28,29 @@ export default function Home() {
           First Post
         </Link>
       </section>
+      <section className="post-container">
+        <h2 className="post-title">Blog</h2>
+        <ul className="post-contents">
+          {allPostsData.map(({ id, date, title }) => (
+            <li className="post-content" key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {date}
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
 }
